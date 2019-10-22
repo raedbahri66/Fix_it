@@ -28,6 +28,8 @@ public class fixit {
        System.out.println(p.afficherPosteur());
        Date date1 = new Date(2005, 06, 11);
 
+              System.out.println(p.login(112545, "21255"));
+
        //p.modifierPosteur(new Posteur(2554, 2054, "aymen", "bahri", "aymen@mail.com", "5444hh", date1, 4554));
        //System.out.println(p.afficherPosteur());
 

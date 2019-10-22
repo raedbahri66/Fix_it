@@ -159,6 +159,37 @@ try {
         return p; 
     }
     
+    public String login(int cin1,String password1)
+    {
+        String req1="select * from Posteur where cin="+cin1 +" and password="+password1;   
+        String req2="select * from Jobeur where cin="+cin1 +" and password="+password1;
+        String req3="select * from admin where cin="+cin1 +" and password="+password1;   
+        
+        String role = "fault";
+        System.out.println(req1);
+        try {
+          ResultSet res=  ste.executeQuery(req1);
+          if (res.next()) { 
+              role= "Posteur_interface";
+              }   
+          ResultSet res1=  ste.executeQuery(req2);
+          if (res1.next()) { 
+              role= "Jobeur_interface";
+              }
+       ResultSet res2=  ste.executeQuery(req3);
+          if (res2.next()) { 
+              role= "Admin_interface";
+              }
+         
+              
+      } catch (SQLException ex) {
+          System.out.println(ex.getMessage());
+      } 
+        
+       return role; 
+    }
+            
+    
     
     
 }
